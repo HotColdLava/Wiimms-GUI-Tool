@@ -50,7 +50,7 @@ Begin ContainerControl SzsManagerContainer
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
-      LockTop         =   False
+      LockTop         =   True
       Mask            =   ""
       Multiline       =   True
       ReadOnly        =   False
@@ -132,7 +132,7 @@ Begin ContainerControl SzsManagerContainer
       End
       Begin TextField LapCountField
          AcceptTabs      =   False
-         Alignment       =   0
+         Alignment       =   2
          AutoDeactivate  =   True
          AutomaticallyCheckSpelling=   False
          BackColor       =   &cFFFFFF00
@@ -203,7 +203,7 @@ Begin ContainerControl SzsManagerContainer
       Width           =   238
       Begin TextField SpeedField
          AcceptTabs      =   False
-         Alignment       =   0
+         Alignment       =   2
          AutoDeactivate  =   True
          AutomaticallyCheckSpelling=   False
          BackColor       =   &cFFFFFF00
@@ -224,7 +224,7 @@ Begin ContainerControl SzsManagerContainer
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   True
+         LockRight       =   False
          LockTop         =   True
          Mask            =   ""
          Password        =   False
@@ -639,6 +639,22 @@ End
 		Sub Action()
 		  Dim TE As New TransformationEditor
 		  TE.Show
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton2
+	#tag Event
+		Sub Action()
+		  Dim Extract As New SzsTool
+		  Extract.Extract(WguitWindow.FileLocationField.Text)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton3
+	#tag Event
+		Sub Action()
+		  Dim EA As New SzsTool
+		  EA.AllExtract
 		End Sub
 	#tag EndEvent
 #tag EndEvents

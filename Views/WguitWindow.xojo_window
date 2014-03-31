@@ -69,6 +69,7 @@ Begin Window WguitWindow
          LockTop         =   True
          Scope           =   0
          Speed           =   1
+         SzsLocal        =   ""
          TabIndex        =   0
          TabPanelIndex   =   1
          TabStop         =   True

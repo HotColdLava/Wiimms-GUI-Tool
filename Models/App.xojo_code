@@ -1,6 +1,22 @@
 #tag Class
 Protected Class App
 Inherits Application
+	#tag Event
+		Sub Open()
+		  #If TargetMacOS or TargetLinux Then
+		    WszstPath = "/usr/local/bin/wszst"
+		  #ElseIf TargetWin32
+		    WszstPath = "wszst"
+		  #Endif
+		End Sub
+	#tag EndEvent
+
+
+	#tag Property, Flags = &h0
+		Shared WszstPath As String
+	#tag EndProperty
+
+
 	#tag Constant, Name = kEditClear, Type = String, Dynamic = False, Default = \"&Delete", Scope = Public
 		#Tag Instance, Platform = Windows, Language = Default, Definition  = \"&Delete"
 		#Tag Instance, Platform = Linux, Language = Default, Definition  = \"&Delete"
