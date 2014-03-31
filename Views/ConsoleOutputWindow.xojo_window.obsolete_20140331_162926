@@ -1,0 +1,81 @@
+#tag Window
+Begin Window ConsoleOutputWindow
+   BackColor       =   &cFFFFFF00
+   Backdrop        =   0
+   CloseButton     =   True
+   Compatibility   =   ""
+   Composite       =   False
+   Frame           =   0
+   FullScreen      =   False
+   FullScreenButton=   False
+   HasBackColor    =   False
+   Height          =   400
+   ImplicitInstance=   True
+   LiveResize      =   True
+   MacProcID       =   0
+   MaxHeight       =   32000
+   MaximizeButton  =   True
+   MaxWidth        =   32000
+   MenuBar         =   0
+   MenuBarVisible  =   True
+   MinHeight       =   64
+   MinimizeButton  =   True
+   MinWidth        =   64
+   Placement       =   2
+   Resizeable      =   True
+   Title           =   "Console Log"
+   Visible         =   True
+   Width           =   500
+   Begin TextArea ConsoleOutputArea
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   True
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   400
+      HelpTag         =   ""
+      HideSelection   =   True
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   0
+      LimitText       =   0
+      LineHeight      =   0.0
+      LineSpacing     =   1.0
+      LockBottom      =   True
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Mask            =   ""
+      Multiline       =   True
+      ReadOnly        =   False
+      Scope           =   0
+      ScrollbarHorizontal=   False
+      ScrollbarVertical=   True
+      Styled          =   True
+      TabIndex        =   0
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   0
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   500
+   End
+End
+#tag EndWindow
+
+#tag WindowCode
+#tag EndWindowCode
+

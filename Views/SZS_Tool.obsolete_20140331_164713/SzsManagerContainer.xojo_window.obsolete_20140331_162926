@@ -653,8 +653,9 @@ End
 #tag Events PushButton3
 	#tag Event
 		Sub Action()
-		  Dim EA As New SzsTool
-		  EA.AllExtract
+		  Dim ExtractAll As New SzsTool
+		  ExtractAll.AllExtract(WguitWindow.FileLocationField.Text)
+		  ConsoleOutput.Text = SzsTool.TheOutput
 		End Sub
 	#tag EndEvent
 #tag EndEvents

@@ -4,7 +4,7 @@ Protected Class SzsTool
 		Sub AllExtract(TheFile As String)
 		  Dim TheShell As New Shell
 		  TheShell.Execute(App.WszstPath, "extract" + " " + "--all" + " " + TheFile)
-		  SzsManagerContainer.ConsoleOutput.Text = TheShell.ReadAll
+		  TheOutput = TheShell.ReadAll
 		End Sub
 	#tag EndMethod
 
@@ -12,9 +12,14 @@ Protected Class SzsTool
 		Sub Extract(TheFile As String)
 		  Dim TheShell As New Shell
 		  TheShell.Execute(App.WszstPath, "extract" + " " + TheFile)
-		  SzsManagerContainer.ConsoleOutput.Text = TheShell.ReadAll
+		  TheOutput = TheShell.ReadAll
 		End Sub
 	#tag EndMethod
+
+
+	#tag Property, Flags = &h0
+		Shared TheOutput As String
+	#tag EndProperty
 
 
 	#tag ViewBehavior

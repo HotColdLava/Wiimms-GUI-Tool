@@ -73,6 +73,7 @@ Begin Window TransformationEditor
       UseFocusRing    =   True
       Visible         =   True
       Width           =   400
+      _ScrollOffset   =   0
       _ScrollWidth    =   -1
    End
    Begin PushButton PushButton1

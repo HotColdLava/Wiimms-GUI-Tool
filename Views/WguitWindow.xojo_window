@@ -9,7 +9,7 @@ Begin Window WguitWindow
    FullScreen      =   False
    FullScreenButton=   False
    HasBackColor    =   False
-   Height          =   434
+   Height          =   400
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
@@ -25,155 +25,256 @@ Begin Window WguitWindow
    Resizeable      =   True
    Title           =   "Wiimms GUI Tool"
    Visible         =   True
-   Width           =   450
-   Begin PagePanel ToolPanel
+   Width           =   600
+   Begin PushButton PushButton1
       AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Open"
+      Default         =   False
       Enabled         =   True
-      Height          =   434
+      Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   0
+      Italic          =   False
+      Left            =   500
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   False
+      LockRight       =   True
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   1
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   14
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin TextField FileLocationField
+      AcceptTabs      =   False
+      Alignment       =   0
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   135
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   True
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   2
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   14
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   353
+   End
+   Begin Label Label1
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   3
+      TabPanelIndex   =   0
+      Text            =   "File or Directory:"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   14
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   103
+   End
+   Begin TabPanel TabPanel1
+      AutoDeactivate  =   True
+      Bold            =   False
+      Enabled         =   True
+      Height          =   334
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
-      PanelCount      =   2
       Panels          =   ""
       Scope           =   0
-      TabIndex        =   0
+      SmallTabs       =   False
+      TabDefinition   =   "SZS Manager\rConsole Log"
+      TabIndex        =   4
       TabPanelIndex   =   0
-      Top             =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   46
+      Underline       =   False
       Value           =   0
       Visible         =   True
-      Width           =   450
-      Begin SzsManagerContainer SzsManagerContainer1
-         AcceptFocus     =   False
-         AcceptTabs      =   True
-         AutoDeactivate  =   True
-         BackColor       =   &cFFFFFF00
-         Backdrop        =   0
-         Enabled         =   True
-         EraseBackground =   True
-         HasBackColor    =   False
-         Height          =   368
-         HelpTag         =   ""
-         InitialParent   =   "ToolPanel"
-         LapCount        =   3
-         Left            =   0
-         LockBottom      =   True
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Scope           =   0
-         Speed           =   1
-         SzsLocal        =   ""
-         TabIndex        =   0
-         TabPanelIndex   =   1
-         TabStop         =   True
-         Top             =   66
-         Transparent     =   True
-         UseFocusRing    =   False
-         Visible         =   True
-         Width           =   450
-      End
-      Begin Label Label1
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "ToolPanel"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   1
-         TabPanelIndex   =   1
-         Text            =   "File or Directory:"
-         TextAlign       =   0
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   20
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   103
-      End
-      Begin TextField FileLocationField
-         AcceptTabs      =   False
-         Alignment       =   0
-         AutoDeactivate  =   True
-         AutomaticallyCheckSpelling=   False
-         BackColor       =   &cFFFFFF00
-         Bold            =   False
-         Border          =   True
-         CueText         =   ""
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Format          =   ""
-         Height          =   22
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "ToolPanel"
-         Italic          =   False
-         Left            =   135
-         LimitText       =   0
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Mask            =   ""
-         Password        =   False
-         ReadOnly        =   False
-         Scope           =   0
-         TabIndex        =   2
-         TabPanelIndex   =   1
-         TabStop         =   True
-         Text            =   ""
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   20
-         Underline       =   False
-         UseFocusRing    =   True
-         Visible         =   True
-         Width           =   203
-      End
-      Begin PushButton PushButton1
+      Width           =   560
+      Begin PushButton PushButton2
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
          Cancel          =   False
-         Caption         =   "Open"
+         Caption         =   "Check File"
          Default         =   False
          Enabled         =   True
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
-         InitialParent   =   "ToolPanel"
+         InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   350
+         Left            =   40
          LockBottom      =   False
          LockedInPosition=   False
-         LockLeft        =   False
-         LockRight       =   True
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   147
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PushButton PushButton3
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "Compare"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   1
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   179
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PushButton PushButton4
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "List"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   2
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   211
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PushButton PushButton5
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "Transformation Editor"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
          LockTop         =   True
          Scope           =   0
          TabIndex        =   3
@@ -182,51 +283,222 @@ Begin Window WguitWindow
          TextFont        =   "System"
          TextSize        =   0.0
          TextUnit        =   0
-         Top             =   20
+         Top             =   243
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PopupMenu FileFormatPopup
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         InitialValue    =   "U8\nSZS\nRARC\nARC\nBREFT\nBREFF\nBRRES"
+         Italic          =   False
+         Left            =   40
+         ListIndex       =   0
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   4
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   308
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PushButton PushButton6
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "Create"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   120
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   5
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   340
          Underline       =   False
          Visible         =   True
          Width           =   80
       End
-   End
-   Begin MainToolbar MainToolbar1
-      Enabled         =   True
-      Height          =   32
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Left            =   0
-      LockedInPosition=   False
-      Scope           =   0
-      TabPanelIndex   =   0
-      Top             =   0
-      Visible         =   True
-      Width           =   100
+      Begin PushButton PushButton8
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "Extract All"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   6
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   115
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin Label Label2
+         AutoDeactivate  =   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Height          =   21
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   False
+         Scope           =   0
+         Selectable      =   False
+         TabIndex        =   7
+         TabPanelIndex   =   1
+         Text            =   "Format to Create:"
+         TextAlign       =   0
+         TextColor       =   &c00000000
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   275
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin PushButton PushButton7
+         AutoDeactivate  =   True
+         Bold            =   False
+         ButtonStyle     =   "0"
+         Cancel          =   False
+         Caption         =   "Extract"
+         Default         =   False
+         Enabled         =   True
+         Height          =   20
+         HelpTag         =   ""
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Scope           =   0
+         TabIndex        =   8
+         TabPanelIndex   =   1
+         TabStop         =   True
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   83
+         Underline       =   False
+         Visible         =   True
+         Width           =   160
+      End
+      Begin TextArea ConsoleLogArea
+         AcceptTabs      =   False
+         Alignment       =   0
+         AutoDeactivate  =   True
+         AutomaticallyCheckSpelling=   True
+         BackColor       =   &cFFFFFF00
+         Bold            =   False
+         Border          =   True
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         Format          =   ""
+         Height          =   276
+         HelpTag         =   ""
+         HideSelection   =   True
+         Index           =   -2147483648
+         InitialParent   =   "TabPanel1"
+         Italic          =   False
+         Left            =   40
+         LimitText       =   0
+         LineHeight      =   0.0
+         LineSpacing     =   1.0
+         LockBottom      =   True
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   True
+         LockTop         =   True
+         Mask            =   ""
+         Multiline       =   True
+         ReadOnly        =   False
+         Scope           =   0
+         ScrollbarHorizontal=   False
+         ScrollbarVertical=   True
+         Styled          =   True
+         TabIndex        =   0
+         TabPanelIndex   =   2
+         TabStop         =   True
+         Text            =   ""
+         TextColor       =   &c00000000
+         TextFont        =   "System"
+         TextSize        =   0.0
+         TextUnit        =   0
+         Top             =   84
+         Underline       =   False
+         UseFocusRing    =   True
+         Visible         =   True
+         Width           =   520
+      End
    End
 End
 #tag EndWindow
 
 #tag WindowCode
-	#tag Event
-		Sub Activate()
-		  Dim WiimmsLocation As FolderItem
-		  WiimmsLocation = GetFolderItem(WszstLocation)
-		  
-		  If WiimmsLocation.Exists = False Then
-		    
-		    'Dim InstallWSZST As New MessageDialog
-		    'Dim ButtonAction As MessageDialogButton
-		    '
-		    'InstallWSZST.Title = "Wiimms SZS Tools Not Found!"
-		    'InstallWSZST.Message = "Would you like to install Wiimms SZS Tools?"
-		    'InstallWSZST.ActionButton.Caption = "Install Wiimms SZS Tool"
-		    'InstallWSZST.CancelButton.Caption = "No"
-		    '
-		    'ButtonAction = InstallWSZST.ShowModal
-		    
-		  End If
-		End Sub
-	#tag EndEvent
-
-
 	#tag Method, Flags = &h0
 		Sub OpenArchive()
 		  Dim TheArchive As New FolderItem
@@ -246,15 +518,12 @@ End
 
 
 	#tag Property, Flags = &h0
-		NinFile As String
+		ClearConsoleLog As Boolean = False
 	#tag EndProperty
 
-
-	#tag Constant, Name = WszstLocation, Type = String, Dynamic = False, Default = \"", Scope = Public
-		#Tag Instance, Platform = Mac OS, Language = Default, Definition  = \"/usr/local/bin/wszst"
-		#Tag Instance, Platform = Linux, Language = Default, Definition  = \"/usr/local/bin/wszst"
-		#Tag Instance, Platform = Windows, Language = Default, Definition  = \"wszst"
-	#tag EndConstant
+	#tag Property, Flags = &h0
+		NinFile As String
+	#tag EndProperty
 
 
 #tag EndWindowCode
@@ -266,14 +535,29 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events MainToolbar1
+#tag Events PushButton5
 	#tag Event
-		Sub Action(item As ToolItem)
-		  If item.Caption = "SZS Manager" Then
-		    ToolPanel.Value = 0
-		  ElseIf item.Caption = "BMG Manager" Then
-		    ToolPanel.Value = 1
-		  End If
+		Sub Action()
+		  Dim TE As New TransformationEditor
+		  TE.Show
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton8
+	#tag Event
+		Sub Action()
+		  Dim ExtractAll As New SzsTool
+		  ExtractAll.AllExtract(WguitWindow.FileLocationField.Text)
+		  ConsoleLogArea.Text = SzsTool.TheOutput
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton7
+	#tag Event
+		Sub Action()
+		  Dim Extract As New SzsTool
+		  Extract.Extract(WguitWindow.FileLocationField.Text)
+		  ConsoleLogArea.Text = Extract.TheOutput
 		End Sub
 	#tag EndEvent
 #tag EndEvents
