@@ -13,9 +13,9 @@ Begin Window WguitWindow
    ImplicitInstance=   True
    LiveResize      =   True
    MacProcID       =   0
-   MaxHeight       =   32000
+   MaxHeight       =   400
    MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaxWidth        =   600
    MenuBar         =   1932950043
    MenuBarVisible  =   True
    MinHeight       =   64
@@ -499,6 +499,15 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag MenuHandler
+		Function HelpAbout() As Boolean Handles HelpAbout.Action
+			AboutWguitWindow.Show
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+
 	#tag Method, Flags = &h0
 		Sub OpenArchive()
 		  Dim TheArchive As New FolderItem

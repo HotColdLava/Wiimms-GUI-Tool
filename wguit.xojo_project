@@ -13,6 +13,7 @@ Folder=Resources;Resources;&h1D02F838;&h0;false
 FileTypeSet=NintendoFileTypes;Models/NintendoFileTypes.xojo_filetypeset;&h653E5DB7;&h2B9AE647;false
 Picture=Archive;../resources/compress.png;&h3AABCD76;&h1D02F838;false;0;&h0
 Class=SzsTool;Controllers/SzsTool.xojo_code;&hB335D10;&h2AEB719D;false
+Window=AboutWguitWindow;Views/AboutWguitWindow.xojo_window;&h14A7A6E8;&h46849754;false
 DefaultWindow=WguitWindow
 AppMenuBar=MainMenuBar
 MajorVersion=1
