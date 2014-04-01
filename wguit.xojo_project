@@ -14,6 +14,7 @@ FileTypeSet=NintendoFileTypes;Models/NintendoFileTypes.xojo_filetypeset;&h653E5D
 Picture=Archive;../resources/compress.png;&h3AABCD76;&h1D02F838;false;0;&h0
 Class=SzsTool;Controllers/SzsTool.xojo_code;&hB335D10;&h2AEB719D;false
 Window=AboutWguitWindow;Views/AboutWguitWindow.xojo_window;&h14A7A6E8;&h46849754;false
+Window=SettingsWindow;Views/SettingsWindow.xojo_window;&h79F81791;&h46849754;false
 DefaultWindow=WguitWindow
 AppMenuBar=MainMenuBar
 MajorVersion=1

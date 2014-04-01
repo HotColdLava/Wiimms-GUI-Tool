@@ -499,9 +499,25 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Event
+		Sub Activate()
+		  
+		End Sub
+	#tag EndEvent
+
+
 	#tag MenuHandler
 		Function HelpAbout() As Boolean Handles HelpAbout.Action
 			AboutWguitWindow.Show
+			Return True
+			
+		End Function
+	#tag EndMenuHandler
+
+	#tag MenuHandler
+		Function HelpSettings() As Boolean Handles HelpSettings.Action
+			Dim S As New SettingsWindow
+			S.Show
 			Return True
 			
 		End Function
@@ -556,7 +572,7 @@ End
 	#tag Event
 		Sub Action()
 		  Dim ExtractAll As New SzsTool
-		  ExtractAll.AllExtract(WguitWindow.FileLocationField.Text)
+		  ExtractAll.ExtractAll(WguitWindow.FileLocationField.Text)
 		  ConsoleLogArea.Text = SzsTool.TheOutput
 		End Sub
 	#tag EndEvent

@@ -1,17 +1,17 @@
 #tag Class
 Protected Class SzsTool
 	#tag Method, Flags = &h0
-		Sub AllExtract(TheFile As String)
+		Sub Extract(TheFile As String)
 		  Dim TheShell As New Shell
-		  TheShell.Execute(App.WszstPath, "extract" + " " + "--all" + " " + TheFile)
+		  TheShell.Execute(App.WszstPath, "extract" + " " + TheFile)
 		  TheOutput = TheShell.ReadAll
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Sub Extract(TheFile As String)
+		Sub ExtractAll(TheFile As String)
 		  Dim TheShell As New Shell
-		  TheShell.Execute(App.WszstPath, "extract" + " " + TheFile)
+		  TheShell.Execute(App.WszstPath, "extract" + " " + "--all" + " " + TheFile)
 		  TheOutput = TheShell.ReadAll
 		End Sub
 	#tag EndMethod

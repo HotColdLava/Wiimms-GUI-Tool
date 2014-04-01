@@ -5,12 +5,18 @@ Inherits Application
 		Sub Open()
 		  #If TargetMacOS or TargetLinux Then
 		    WszstPath = "/usr/local/bin/wszst"
+		    HelpSettings.Text = "Preferences"
 		  #ElseIf TargetWin32
 		    WszstPath = "wszst"
+		    HelpSettings.Text = "Settings"
 		  #Endif
 		End Sub
 	#tag EndEvent
 
+
+	#tag Property, Flags = &h0
+		Shared Untitled As Integer
+	#tag EndProperty
 
 	#tag Property, Flags = &h0
 		Shared WszstPath As String

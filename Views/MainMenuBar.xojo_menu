@@ -29,7 +29,7 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
-      Begin PrefsMenuItem HelpDownloadWiimmsSZSTools
+      Begin PrefsMenuItem HelpSettings
          SpecialMenu = 0
          Text = "Settings"
          Index = -2147483648
