@@ -1,6 +1,14 @@
 #tag Class
 Protected Class SzsTool
 	#tag Method, Flags = &h0
+		Sub Check(TheFile As String)
+		  Dim CheckFile As New Shell
+		  CheckFile.Execute(App.WszstPath, "check" + " " + WguitWindow.FileLocationField.Text)
+		  TheOutput = CheckFile.ReadAll
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Extract(TheFile As String)
 		  Dim TheShell As New Shell
 		  TheShell.Execute(App.WszstPath, "extract" + " " + TheFile)
