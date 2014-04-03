@@ -3,24 +3,32 @@ Protected Class SzsTool
 	#tag Method, Flags = &h0
 		Sub Check(TheFile As String)
 		  Dim CheckFile As New Shell
-		  CheckFile.Execute(App.WszstPath, "check" + " " + WguitWindow.FileLocationField.Text)
+		  CheckFile.Execute(App.WszstPath, "check" + " " + TheFile)
 		  TheOutput = CheckFile.ReadAll
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub Create(TheFile As String)
+		  Dim Create As New Shell
+		  Create.Execute(App.WszstPath, "create" + " " + TheFile + " " + "--dest" + " " + TheFile + "." + WguitWindow.FileFormatPopup.Text.Lowercase)
+		  TheOutput = Create.ReadAll
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub Extract(TheFile As String)
-		  Dim TheShell As New Shell
-		  TheShell.Execute(App.WszstPath, "extract" + " " + TheFile)
-		  TheOutput = TheShell.ReadAll
+		  Dim Extract As New Shell
+		  Extract.Execute(App.WszstPath, "extract" + " " + TheFile)
+		  TheOutput = Extract.ReadAll
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub ExtractAll(TheFile As String)
-		  Dim TheShell As New Shell
-		  TheShell.Execute(App.WszstPath, "extract" + " " + "--all" + " " + TheFile)
-		  TheOutput = TheShell.ReadAll
+		  Dim ExtractAll As New Shell
+		  ExtractAll.Execute(App.WszstPath, "extract" + " " + "--all" + " " + TheFile)
+		  TheOutput = ExtractAll.ReadAll
 		End Sub
 	#tag EndMethod
 

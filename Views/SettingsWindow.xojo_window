@@ -26,164 +26,37 @@ Begin Window SettingsWindow
    Title           =   ""
    Visible         =   True
    Width           =   400
-   Begin TabPanel TabPanel1
+   Begin CheckBox ClearConsoleLogCheck
       AutoDeactivate  =   True
       Bold            =   False
+      Caption         =   "Clear the console log after each command?"
+      DataField       =   ""
+      DataSource      =   ""
       Enabled         =   True
-      Height          =   264
+      Height          =   20
       HelpTag         =   ""
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   0
-      LockBottom      =   True
+      Left            =   20
+      LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
-      LockRight       =   True
+      LockRight       =   False
       LockTop         =   True
-      Panels          =   ""
       Scope           =   0
-      SmallTabs       =   False
-      TabDefinition   =   "Tools\rExtras"
-      TabIndex        =   0
+      State           =   0
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   0
+      Top             =   14
       Underline       =   False
-      Value           =   1
+      Value           =   False
       Visible         =   True
-      Width           =   400
-      Begin CheckBox ClearConsoleLogCheck
-         AutoDeactivate  =   True
-         Bold            =   False
-         Caption         =   "Clear the console log after each command?"
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "TabPanel1"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Scope           =   0
-         State           =   0
-         TabIndex        =   0
-         TabPanelIndex   =   2
-         TabStop         =   True
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   38
-         Underline       =   False
-         Value           =   False
-         Visible         =   True
-         Width           =   360
-      End
-      Begin Label ToolPathLabel
-         AutoDeactivate  =   True
-         Bold            =   False
-         DataField       =   ""
-         DataSource      =   ""
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "TabPanel1"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   True
-         LockTop         =   True
-         Multiline       =   False
-         Scope           =   0
-         Selectable      =   False
-         TabIndex        =   0
-         TabPanelIndex   =   1
-         Text            =   "Wiimms SZS Tools Path:"
-         TextAlign       =   0
-         TextColor       =   &c00000000
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   38
-         Transparent     =   False
-         Underline       =   False
-         Visible         =   True
-         Width           =   360
-      End
-      Begin PushButton InstallWitBtn
-         AutoDeactivate  =   True
-         Bold            =   False
-         ButtonStyle     =   "0"
-         Cancel          =   False
-         Caption         =   ""
-         Default         =   False
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "TabPanel1"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   1
-         TabPanelIndex   =   1
-         TabStop         =   True
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   224
-         Underline       =   False
-         Visible         =   False
-         Width           =   360
-      End
-      Begin PushButton InstallWszstBtn
-         AutoDeactivate  =   True
-         Bold            =   False
-         ButtonStyle     =   "0"
-         Cancel          =   False
-         Caption         =   ""
-         Default         =   False
-         Enabled         =   True
-         Height          =   20
-         HelpTag         =   ""
-         Index           =   -2147483648
-         InitialParent   =   "TabPanel1"
-         Italic          =   False
-         Left            =   20
-         LockBottom      =   False
-         LockedInPosition=   False
-         LockLeft        =   True
-         LockRight       =   False
-         LockTop         =   True
-         Scope           =   0
-         TabIndex        =   2
-         TabPanelIndex   =   1
-         TabStop         =   True
-         TextFont        =   "System"
-         TextSize        =   0.0
-         TextUnit        =   0
-         Top             =   192
-         Underline       =   False
-         Visible         =   False
-         Width           =   360
-      End
+      Width           =   360
    End
 End
 #tag EndWindow
@@ -197,26 +70,6 @@ End
 		    Me.Title = "Settings"
 		  #Endif
 		  
-		  Dim ToolsExist As New Shell
-		  Dim ExistBool As String
-		  
-		  //ToolsExist.Execute(App.WszstPath)
-		  ToolsExist.Execute("wtszst")
-		  ExistBool = ToolsExist.ReadAll
-		  
-		  If InStr(ExistBool, "command not found" ) > 0 Then
-		    ToolPathLabel.Text = "You must install Wiimms SZS Tools!"
-		    InstallWszstBtn.Visible = True
-		    InstallWszstBtn.Caption = "Install Wiimms SZS Tools"
-		  Else
-		    InstallWszstBtn.Visible = False
-		    #If TargetMacOS or TargetLinux Then
-		      ToolPathLabel.Text = "Wiimms SZS Tools Path: /usr/local/bin/"
-		    #Else
-		      ToolPathLabel.Text = "Path : C:\"+ SpecialFolder.Applications + "Wiimms SZS Tools"
-		    #Endif
-		  End If
-		  
 		  
 		End Sub
 	#tag EndEvent
@@ -229,6 +82,24 @@ End
 
 #tag EndWindowCode
 
+#tag Events ClearConsoleLogCheck
+	#tag Event
+		Sub Action()
+		  Select Case ClearConsoleLogCheck.State
+		  Case CheckBox.CheckedStates.Unchecked
+		    ClearConsoleLogBool = False
+		    #If DebugBuild Then
+		      MsgBox Str(ClearConsoleLogBool)
+		    #Endif
+		  Case CheckBox.CheckedStates.Checked
+		    ClearConsoleLogBool = True
+		    #If DebugBuild Then
+		      MsgBox Str(ClearConsoleLogBool)
+		    #Endif
+		  End Select
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
 		Name="BackColor"

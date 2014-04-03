@@ -31,7 +31,7 @@ Begin Window WguitWindow
       Bold            =   False
       ButtonStyle     =   "0"
       Cancel          =   False
-      Caption         =   "Open"
+      Caption         =   "File"
       Default         =   False
       Enabled         =   True
       Height          =   20
@@ -39,7 +39,7 @@ Begin Window WguitWindow
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   500
+      Left            =   408
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   False
@@ -52,7 +52,7 @@ Begin Window WguitWindow
       TextFont        =   "System"
       TextSize        =   0.0
       TextUnit        =   0
-      Top             =   14
+      Top             =   15
       Underline       =   False
       Visible         =   True
       Width           =   80
@@ -98,7 +98,7 @@ Begin Window WguitWindow
       Underline       =   False
       UseFocusRing    =   True
       Visible         =   True
-      Width           =   353
+      Width           =   261
    End
    Begin Label Label1
       AutoDeactivate  =   True
@@ -164,7 +164,7 @@ Begin Window WguitWindow
       Value           =   0
       Visible         =   True
       Width           =   560
-      Begin PushButton PushButton2
+      Begin PushButton CheckFileBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
@@ -195,14 +195,14 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   160
       End
-      Begin PushButton PushButton3
+      Begin PushButton CompareBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
          Cancel          =   False
          Caption         =   "Compare"
          Default         =   False
-         Enabled         =   True
+         Enabled         =   False
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -226,14 +226,14 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   160
       End
-      Begin PushButton PushButton4
+      Begin PushButton ListBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
          Cancel          =   False
          Caption         =   "List"
          Default         =   False
-         Enabled         =   True
+         Enabled         =   False
          Height          =   20
          HelpTag         =   ""
          Index           =   -2147483648
@@ -288,7 +288,7 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   160
       End
-      Begin PushButton PushButton6
+      Begin PushButton CreateFileBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
@@ -319,7 +319,7 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   160
       End
-      Begin PushButton PushButton8
+      Begin PushButton ExtractAllBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
@@ -384,7 +384,7 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   160
       End
-      Begin PushButton PushButton7
+      Begin PushButton ExtractBtn
          AutoDeactivate  =   True
          Bold            =   False
          ButtonStyle     =   "0"
@@ -617,14 +617,14 @@ Begin Window WguitWindow
          Visible         =   True
          Width           =   256
       End
-      Begin Listbox Listbox1
+      Begin Listbox TransformationsList
          AutoDeactivate  =   True
          AutoHideScrollbars=   True
          Bold            =   False
          Border          =   True
-         ColumnCount     =   1
+         ColumnCount     =   2
          ColumnsResizable=   False
-         ColumnWidths    =   ""
+         ColumnWidths    =   "100"
          DataField       =   ""
          DataSource      =   ""
          DefaultRowHeight=   -1
@@ -633,7 +633,7 @@ Begin Window WguitWindow
          EnableDragReorder=   False
          GridLinesHorizontal=   0
          GridLinesVertical=   0
-         HasHeading      =   False
+         HasHeading      =   True
          HeadingIndex    =   -1
          Height          =   85
          HelpTag         =   ""
@@ -643,12 +643,12 @@ Begin Window WguitWindow
          InitialValue    =   ""
          Italic          =   False
          Left            =   212
-         LockBottom      =   False
+         LockBottom      =   True
          LockedInPosition=   False
          LockLeft        =   True
-         LockRight       =   False
+         LockRight       =   True
          LockTop         =   True
-         RequiresSelection=   False
+         RequiresSelection=   True
          Scope           =   0
          ScrollbarHorizontal=   False
          ScrollBarVertical=   True
@@ -664,6 +664,7 @@ Begin Window WguitWindow
          UseFocusRing    =   True
          Visible         =   True
          Width           =   348
+         _ScrollOffset   =   0
          _ScrollWidth    =   -1
       End
       Begin Label Label5
@@ -825,13 +826,45 @@ Begin Window WguitWindow
          Width           =   80
       End
    End
+   Begin PushButton PushButton13
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Directory"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   500
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   5
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   15
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
 End
 #tag EndWindow
 
 #tag WindowCode
 	#tag Event
 		Sub Activate()
-		  
+		  TransformationsList.Heading(0) = "Type"
+		  TransformationsList.Heading(1) = "Value"
 		End Sub
 	#tag EndEvent
 
@@ -855,6 +888,18 @@ End
 
 
 	#tag Method, Flags = &h0
+		Sub ClearLog()
+		  If SettingsWindow.ClearConsoleLogBool = False Then
+		    //Do Nothing
+		  Else
+		    ConsoleLogArea.Text = ""
+		  End If
+		  
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Sub OpenArchive()
 		  Dim TheArchive As New FolderItem
 		  Dim ArchiveOpen As New OpenDialog
@@ -867,6 +912,44 @@ End
 		  If TheArchive <> Nil Then
 		    FileLocationField.Text = TheArchive.NativePath
 		    NinFile = TheArchive.NativePath
+		  End If
+		  
+		  If ExtractBtn.Enabled = False or ExtractAllBtn.Enabled = False or CheckFileBtn.Enabled = False or CompareBtn.Enabled = False or ListBtn.Enabled = False Then
+		    //Enables the file related buttons
+		    ExtractBtn.Enabled = True
+		    ExtractAllBtn.Enabled = True
+		    CheckFileBtn.Enabled = True
+		    //CompareBtn.Enabled = True
+		    //ListBtn.Enabled = True
+		    FileFormatPopup.Enabled = False
+		    CreateFileBtn.Enabled = False
+		  End If
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Sub OpenDirectory()
+		  Dim TheFolderBrowser As New SelectFolderDialog
+		  Dim SelectedFolder As New FolderItem
+		  
+		  TheFolderBrowser.Title = "Select a directory"
+		  
+		  SelectedFolder = TheFolderBrowser.ShowModal
+		  
+		  If SelectedFolder <> Nil Then
+		    FileLocationField.Text = SelectedFolder.NativePath
+		  End If
+		  
+		  If ExtractBtn.Enabled = True or ExtractAllBtn.Enabled = True or CheckFileBtn.Enabled = True or CompareBtn.Enabled = True or ListBtn.Enabled = True Then
+		    //Disables the file related command buttons
+		    ExtractBtn.Enabled = False
+		    ExtractAllBtn.Enabled = False
+		    CheckFileBtn.Enabled = False
+		    //Not yet implemented //CompareBtn.Enabled = False
+		    //Not yet implemented //ListBtn.Enabled = False
+		    //Enables the directory related command buttons
+		    FileFormatPopup.Enabled = True
+		    CreateFileBtn.Enabled = True
 		  End If
 		End Sub
 	#tag EndMethod
@@ -890,33 +973,85 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events PushButton2
+#tag Events CheckFileBtn
 	#tag Event
 		Sub Action()
 		  If FileLocationField.Text.Len = 0 Then
-		    MsgBox "You need to load a file!"
+		    MsgBox "No file detected!"
 		  Else
 		    Dim CheckFileCommand As New SzsTool
 		    CheckFileCommand.Check(FileLocationField.Text)
+		    ClearLog
+		    ConsoleLogArea.Text = CheckFileCommand.TheOutput
 		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events PushButton8
+#tag Events CreateFileBtn
 	#tag Event
 		Sub Action()
-		  Dim ExtractAll As New SzsTool
-		  ExtractAll.ExtractAll(WguitWindow.FileLocationField.Text)
-		  ConsoleLogArea.Text = SzsTool.TheOutput
+		  If FileLocationField.Text.Len = 0 Then
+		    MsgBox "No file detected!"
+		  Else
+		    Dim CreateCommand As New SzsTool
+		    CreateCommand.Create(FileLocationField.Text)
+		    ClearLog
+		    ConsoleLogArea.Text = CreateCommand.TheOutput
+		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events PushButton7
+#tag Events ExtractAllBtn
 	#tag Event
 		Sub Action()
-		  Dim Extract As New SzsTool
-		  Extract.Extract(WguitWindow.FileLocationField.Text)
-		  ConsoleLogArea.Text = Extract.TheOutput
+		  If FileLocationField.Text.Len = 0 Then
+		    MsgBox "No file detected"
+		  Else
+		    Dim ExtractAll As New SzsTool
+		    ExtractAll.ExtractAll(WguitWindow.FileLocationField.Text)
+		    ClearLog
+		    ConsoleLogArea.Text = SzsTool.TheOutput
+		  End if
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events ExtractBtn
+	#tag Event
+		Sub Action()
+		  If FileLocationField.Text.Len = 0 Then
+		    MsgBox "No file detected. Please click ""Open"" to open a file"
+		  Else
+		    Dim Extract As New SzsTool
+		    Extract.Extract(WguitWindow.FileLocationField.Text)
+		    ClearLog
+		    ConsoleLogArea.Text = Extract.TheOutput
+		  End If
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TransformationsList
+	#tag Event
+		Function CellClick(row as Integer, column as Integer, x as Integer, y as Integer) As Boolean
+		  Me.CellType(row, column) = ListBox.TypeEditable
+		  x = 0 //makes the IDE happy
+		  y = 0 //makes the IDE happy
+		End Function
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton9
+	#tag Event
+		Sub Action()
+		  TransformationsList.AddRow "scale", Str(1.0)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton13
+	#tag Event
+		Sub Action()
+		  OpenDirectory
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
